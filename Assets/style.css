@@ -1,0 +1,13 @@
+* {
+    font-family:'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 17px;
+  }
+
+
+hr {
+    border-top: 1.5px solid gray;
+    color : gray;
+    opacity: 0.8;
+}
