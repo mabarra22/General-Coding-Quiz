@@ -26,13 +26,13 @@ var questions = [{
 }
 ]
 
-//setting the numerical variables for the functions.. scores and timers.. 
+//setting the numerical variables for the functions.. scores and timers..//
 var score = 0;
 var currentQuestion = -1;
 var timeLeft = 0;
 var timer;
 
-//starts the countdown timer once user clicks the 'start' button
+//starts the countdown timer once user clicks the 'start' button//
 function start() {
 
 timeLeft = 75;
@@ -41,7 +41,7 @@ document.getElementById("timeLeft").innerHTML = timeLeft;
 timer = setInterval(function() {
     timeLeft--;
     document.getElementById("timeLeft").innerHTML = timeLeft;
-    //proceed to end the game function when timer is below 0 at any time
+    //proceed to end the game function when timer is below 0 at any time//
     if (timeLeft <= 0) {
         clearInterval(timer);
         endGame(); 
@@ -51,7 +51,7 @@ timer = setInterval(function() {
 next();
 }
 
-//stop the timer to end the game 
+//stop the timer to end the game//
 function endGame() {
 clearInterval(timer);
 
@@ -65,7 +65,7 @@ var quizContent = `
 document.getElementById("quizBody").innerHTML = quizContent;
 }
 
-//store the scores on local storage
+//store the scores on local storage//
 function setScore() {
 localStorage.setItem("highscore", score);
 localStorage.setItem("highscoreName",  document.getElementById('name').value);
@@ -85,7 +85,7 @@ var quizContent = `
 document.getElementById("quizBody").innerHTML = quizContent;
 }
 
-//clears the score name and value in the local storage if the user selects 'clear score'
+//clears the score name and value in the local storage if the user selects 'clear score'//
 function clearScore() {
 localStorage.setItem("highscore", "");
 localStorage.setItem("highscoreName",  "");
@@ -93,7 +93,7 @@ localStorage.setItem("highscoreName",  "");
 resetGame();
 }
 
-//reset the game 
+//reset the game//
 function resetGame() {
 clearInterval(timer);
 score = 0;
@@ -115,19 +115,19 @@ var quizContent = `
 document.getElementById("quizBody").innerHTML = quizContent;
 }
 
-//deduct 15seconds from the timer if user chooses an incorrect answer
+//deduct 15seconds from the timer if user chooses an incorrect answer//
 function incorrect() {
 timeLeft -= 15; 
 next();
 }
 
-//increases the score by 20points if the user chooses the correct answer
+//increases the score by 20points if the user chooses the correct answer//
 function correct() {
 score += 20;
 next();
 }
 
-//loops through the questions 
+//loops through the questions//
 function next() {
 currentQuestion++;
 
